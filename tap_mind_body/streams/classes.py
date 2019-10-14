@@ -8,6 +8,7 @@ class ClassesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'classes'
     KEY_PROPERTIES = ['id']
+    RESPONSE_KEY = 'Classes'
 
         
     @property

@@ -38,8 +38,8 @@ class BaseStream(base):
             ##LOGGER.info('making request with url {}, method {}, and parameter {}'.format(url, self.API_METHOD, params))
             response = self.client.make_request(url, self.API_METHOD, params)
             transformed = self.get_stream_data(response)
-            num_results = self.read_pagination_reponse(response, 'PageSize')
-            offset = self.read_pagination_reponse(response, 'RequestedOffset')
+            num_results = self.read_pagination_response(response, 'PageSize')
+            offset = self.read_pagination_response(response, 'RequestedOffset')
             limit = params['limit']
             
             with singer.metrics.record_counter(endpoint=table) as counter:
@@ -68,7 +68,7 @@ class BaseStream(base):
         return transformed
 
 
-    def read_pagination_reponse(self, response, key):
+    def read_pagination_response(self, response, key):
         if 'PaginationResponse' not in response:
             raise ValueError('Got invalid pagination response')
         if key not in response['PaginationResponse']:

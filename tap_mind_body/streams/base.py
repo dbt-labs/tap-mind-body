@@ -45,7 +45,10 @@ class BaseStream(base):
             with singer.metrics.record_counter(endpoint=table) as counter:
                 singer.write_records(table, transformed)
                 counter.increment(len(transformed))
-            
+
+            for stream in self.substreams:
+                for record in transformed:
+                    stream.sync_data(record)
             
             #temporary fix to end loop
             if num_results < limit:            
@@ -77,4 +80,11 @@ class BaseStream(base):
         
         return value
         
-        
+
+class ChildStream(BaseStream):
+    def get_parent_id(self, parent):
+        raise NotImplementedError('get_parent_id is not implemented!')
+
+    def sync_data(self, parent=None):
+        raise NotImplementedError(
+            'sync_data is not implemented!')

@@ -10,7 +10,6 @@ class ClassesStream(BaseStream):
     KEY_PROPERTIES = ['id']
     RESPONSE_KEY = 'Classes'
 
-        
     @property
     def path(self):
         return '/class/classes'

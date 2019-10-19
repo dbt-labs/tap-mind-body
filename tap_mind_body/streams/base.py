@@ -27,7 +27,7 @@ class BaseStream(base):
         
         return params
     
-    def sync_data(self):
+    def sync_data(self, parent=None):
         table = self.TABLE
 
         LOGGER.info('Syncing data for {}'.format(table))
@@ -36,7 +36,7 @@ class BaseStream(base):
 
         while True:
             ##LOGGER.info('making request with url {}, method {}, and parameter {}'.format(url, self.API_METHOD, params))
-            response = self.client.make_request(url, self.API_METHOD, params)
+            response = self.client.make_request(url, self.API_METHOD, params, body=None)
             transformed = self.get_stream_data(response)
             num_results = self.read_pagination_response(response, 'PageSize')
             offset = self.read_pagination_response(response, 'RequestedOffset')
@@ -45,9 +45,11 @@ class BaseStream(base):
             with singer.metrics.record_counter(endpoint=table) as counter:
                 singer.write_records(table, transformed)
                 counter.increment(len(transformed))
+                
+            for stream in self.substreams:
+                for record in transformed:
+                    stream.sync_data(record)
             
-            
-            #temporary fix to end loop
             if num_results < limit:            
                 break 
             else:
@@ -60,7 +62,6 @@ class BaseStream(base):
         #LOGGER.info('the response is {} of type {}'.format(response, type(response)))
         transformed = []
         for record in response[self.RESPONSE_KEY]:
-            #LOGGER.info('the record is {} of type {}'.format(record, type(record)))
             ## removes fields with missing/wrong data type
             #record = self.transform_record(record) 
             transformed.append(record)
@@ -77,4 +78,50 @@ class BaseStream(base):
         
         return value
         
+# 
+class ChildStream(BaseStream):
+    def sync_data(self, parent=None):
+        table = self.TABLE
         
+        if parent is None:
+            raise RuntimeError("Parent is required in substream {}".format(table))
+
+        LOGGER.info('Syncing data for {}'.format(table))
+        url = self.get_url()
+        params = self.get_params(parent['Id'])
+
+        while True:
+            ##LOGGER.info('making request with url {}, method {}, and parameter {}'.format(url, self.API_METHOD, params))
+            response = self.client.make_request(url, self.API_METHOD, params, body=None)
+            transformed = self.get_stream_data(response)
+            num_results = self.read_pagination_response(response, 'PageSize')
+            offset = self.read_pagination_response(response, 'RequestedOffset')
+            limit = params['limit']
+            
+            with singer.metrics.record_counter(endpoint=table) as counter:
+                singer.write_records(table, transformed)
+                counter.increment(len(transformed))
+            
+            if num_results < limit:            
+                break 
+            else:
+                offset += limit
+                params = self.get_params(offset, limit)
+                    
+    def sync_data_unpaginated(self, parent=None):
+        table = self.TABLE
+
+        if parent is None:
+            raise RuntimeError("Parent is required in substream {}".format(table))
+
+        url = self.get_url()
+        params = self.get_params(parent['Id'])
+
+        LOGGER.info('Syncing data for {} for with params={}'.format(table, params))
+
+        response = self.client.make_request(url, self.API_METHOD, params, body=None)
+        transformed = self.get_stream_data(response)
+
+        with singer.metrics.record_counter(endpoint=table) as counter:
+            singer.write_records(table, transformed)
+            counter.increment(len(transformed))

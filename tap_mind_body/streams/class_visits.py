@@ -10,15 +10,12 @@ class ClassVisitsStream(ChildStream):
     TABLE = 'class_visits'
     KEY_PROPERTIES = ['id']
     REQUIRES = ['classes']
+    IS_PAGINATED = False
 
         
     @property
     def path(self):
         return '/class/classvisits'
-      
-    def sync_data(self, parent):
-        LOGGER.info('this is the class_visits sync_data method')
-        self.sync_data_unpaginated(parent)
         
     def get_params(self, class_id, offset_value=0, limit_value=200):
         params = {

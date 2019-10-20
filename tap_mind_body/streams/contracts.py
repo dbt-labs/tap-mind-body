@@ -5,24 +5,24 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class WaitlistEntriesStream(ChildStream):
+class ContractsStream(ChildStream):
     API_METHOD = 'GET'
-    TABLE = 'waitlist_entries'
+    TABLE = 'contracts'
     KEY_PROPERTIES = ['id']
-    REQUIRES = ['classes']
-    RESPONSE_KEY = 'WaitlistEntries'
+    REQUIRES = ['locations']
+    RESPONSE_KEY = 'Contracts'
     IS_PAGINATED = True
 
         
     @property
     def path(self):
-        return '/class/waitlistentries'
+        return '/sale/contracts'
         
-    def get_params(self, class_id, offset_value=0, limit_value=200):
+    def get_params(self, location_id, offset_value=0, limit_value=200):
         params = {
             'offset': offset_value,
             'limit': limit_value,
-            'ClassIDs': class_id
+            'LocationId': location_id
         }
         return params
   

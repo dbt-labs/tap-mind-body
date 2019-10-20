@@ -4,14 +4,14 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class ClassesStream(BaseStream):
+class SalesStream(BaseStream):
     API_METHOD = 'GET'
-    TABLE = 'classes'
+    TABLE = 'sales'
     KEY_PROPERTIES = ['id']
-    RESPONSE_KEY = 'Classes'
+    RESPONSE_KEY = 'Sales'
     IS_PAGINATED = True
 
         
     @property
     def path(self):
-        return '/class/classes'
+        return '/sale/sales'

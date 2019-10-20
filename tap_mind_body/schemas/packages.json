@@ -1,0 +1,100 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DiscountPercentage": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "SellOnline": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Services": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Price": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "OnlinePrice": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "TaxIncluded": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ProgramId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "TaxRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ProductId": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Count": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

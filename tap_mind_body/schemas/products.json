@@ -1,0 +1,102 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Price": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "TaxIncluded": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "TaxRate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "GroupId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "OnlinePrice": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "ShortDescription": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "LongDescription": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Color": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "Size": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

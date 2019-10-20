@@ -1,0 +1,170 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Sale": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "SaleDate": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SaleTime": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SaleDateTime": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ClientId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PurchasedItems": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "IsService": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            }
+          }
+        },
+        "LocationId": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "Payments": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Amount": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "Method": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Type": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Notes": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AccountPayment": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Price": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "AmountPaid": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "Discount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "Tax": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "Returned": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Quantity": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    }
+  }
+}

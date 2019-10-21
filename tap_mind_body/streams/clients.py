@@ -10,7 +10,10 @@ class ClientsStream(BaseStream):
     KEY_PROPERTIES = ['id']
     RESPONSE_KEY = 'Clients'
     IS_PAGINATED = True
-
+    FIELDS_TO_IGNORE = [
+        'CustomClientFields',
+        'SalesReps'
+    ]
         
     @property
     def path(self):

@@ -24,15 +24,4 @@ class ClientPurchasesStream(ChildStream):
             'limit': limit_value,
             'ClientID': client_id
         }
-        return params
-        
-    # 
-    # def get_stream_data(self, response):
-    #     LOGGER.info('syncing info for {}'.format(self))
-    #     transformed = []
-    #     for record in response['Class']['Visits']:
-    #         ## removes fields with missing/wrong data type
-    #         #record = self.transform_record(record) 
-    #         transformed.append(record)
-    # 
-    #     return transformed            
+        return params        

@@ -10,8 +10,14 @@ class ClassesStream(BaseStream):
     KEY_PROPERTIES = ['id']
     RESPONSE_KEY = 'Classes'
     IS_PAGINATED = True
+    FIELDS_TO_IGNORE = [
+        'Clients',
+        'Staff',
+        'Visits',
+        'Location',
+        'ClassDescription'
+    ]
 
-        
     @property
     def path(self):
         return '/class/classes'

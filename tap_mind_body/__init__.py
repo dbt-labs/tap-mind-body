@@ -14,7 +14,6 @@ LOGGER = singer.get_logger()  # noqa
 class MindBodyRunner(tap_framework.Runner):
     def get_streams_to_replicate(self):
         streams = []
-        LOGGER.info('streams are {}'.format(streams))
 
         if not self.catalog:
             return streams
@@ -44,7 +43,6 @@ class MindBodyRunner(tap_framework.Runner):
                         streams.append(to_add)
 
         # Add substreams to the stream instances
-        #LOGGER.info(streams)
         for stream in streams:
             for parent in stream.REQUIRES:
                 stream_map[parent].substreams.append(stream)
@@ -55,7 +53,6 @@ class MindBodyRunner(tap_framework.Runner):
         LOGGER.info("Starting sync.")
 
         streams = self.get_streams_to_replicate()
-        LOGGER.info(streams)
 
         for stream in streams:
             # Don't sync substreams directly -- sync them
@@ -76,10 +73,8 @@ class MindBodyRunner(tap_framework.Runner):
                 LOGGER.error('Failed to sync endpoint {}, moving on!'
                              .format(stream.TABLE))
                 raise e
-
+    # still need to add state
     #    save_state(self.state)
-
-
 
 @singer.utils.handle_top_exception(LOGGER)
 def main():

@@ -12,7 +12,8 @@
     },
     "BirthDate": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "Country": {
@@ -157,6 +158,44 @@
         }
       }
     },
+    "SalesReps": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "FirstName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "LastName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SalesRepNumber": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "SalesRepNumbers": {
+          "type": [
+            "null",
+            "array"
+            ],
+          "items": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          }
+        }
+      }
+    },
     "LiabilityRelease": {
       "type": [
         "null",
@@ -201,22 +240,26 @@
     },
     "RedAlert": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "YellowAlert": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "MiddleName": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "ProspectStage": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "Email": {
@@ -233,12 +276,14 @@
     },
     "HomePhone": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "WorkPhone": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "AccountBalance": {
@@ -255,7 +300,8 @@
     },
     "AddressLine2": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "City": {
@@ -272,12 +318,14 @@
     },
     "WorkExtension": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "ReferredBy": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "PhotoUrl": {
@@ -288,22 +336,26 @@
     },
     "EmergencyContactInfoName": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "EmergencyContactInfoEmail": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "EmergencyContactInfoPhone": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "EmergencyContactInfoRelationship": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "Gender": {
@@ -314,7 +366,8 @@
     },
     "LastFormulaNotes": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "Active": {

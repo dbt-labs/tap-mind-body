@@ -10,7 +10,11 @@ class ClassSchedulesStream(BaseStream):
     KEY_PROPERTIES = ['id']
     RESPONSE_KEY = 'ClassSchedules'
     IS_PAGINATED = True
-
+    FIELDS_TO_IGNORE = [
+        'Classes',
+        'Staff',
+        'Location'
+    ]
         
     @property
     def path(self):

@@ -10,7 +10,7 @@ class GiftCardsStream(BaseStream):
     KEY_PROPERTIES = ['id']
     RESPONSE_KEY = 'GiftCards'
     IS_PAGINATED = True
-
+    FIELDS_TO_IGNORE = ['MembershipRestrictionIds']
         
     @property
     def path(self):

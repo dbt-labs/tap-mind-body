@@ -3,6 +3,7 @@ import pytz
 import singer
 import singer.utils
 import singer.metrics
+import singer.transform
 
 from datetime import timedelta, datetime
 
@@ -15,6 +16,7 @@ LOGGER = singer.get_logger()
 
 class BaseStream(base):
     KEY_PROPERTIES = ['id']
+    FIELDS_TO_IGNORE = []
 
     def get_url(self):
         return 'https://api.mindbodyonline.com/public/v6{}'.format(self.path)
@@ -35,12 +37,8 @@ class BaseStream(base):
         params = self.get_params()
 
         while True:
-            ##LOGGER.info('making request with url {}, method {}, and parameter {}'.format(url, self.API_METHOD, params))
             response = self.client.make_request(url, self.API_METHOD, params, body=None)
             transformed = self.get_stream_data(response)
-            # num_results = self.read_pagination_response(response, 'PageSize')
-            # offset = self.read_pagination_response(response, 'RequestedOffset')
-            # limit = params['limit']
             
             with singer.metrics.record_counter(endpoint=table) as counter:
                 singer.write_records(table, transformed)
@@ -55,9 +53,6 @@ class BaseStream(base):
                 offset = self.read_pagination_response(response, 'RequestedOffset')
                 limit = params['limit']
                 
-                #development to prevent full sync
-                if offset > 50:
-                    break
                 if num_results < limit:            
                     break 
                 else:
@@ -65,14 +60,29 @@ class BaseStream(base):
                     params = self.get_params(offset, limit)  
             else:
                 break          
-        
+    
+    def transform_record(self, record):
+        with singer.Transformer() as tx:
+            metadata = {}
+
+            if self.catalog.metadata is not None:
+                metadata = singer.metadata.to_map(self.catalog.metadata)
+                
+                for field in self.FIELDS_TO_IGNORE:
+                    try:
+                        del record[field]
+                    except KeyError:
+                        LOGGER.info('{} does not exist in current record')
+                            
+            return tx.transform(
+                record,
+                self.catalog.schema.to_dict(),
+                metadata)    
                             
     def get_stream_data(self, response):
-        #LOGGER.info('the response is {} of type {}'.format(response, type(response)))
         transformed = []
         for record in response[self.RESPONSE_KEY]:
-            ## removes fields with missing/wrong data type
-            #record = self.transform_record(record) 
+            record = self.transform_record(record) 
             transformed.append(record)
 
         return transformed
@@ -100,7 +110,6 @@ class ChildStream(BaseStream):
         params = self.get_params(parent['Id'])
 
         while True:
-            ##LOGGER.info('making request with url {}, method {}, and parameter {}'.format(url, self.API_METHOD, params))
             response = self.client.make_request(url, self.API_METHOD, params, body=None)
             transformed = self.get_stream_data(response)
             

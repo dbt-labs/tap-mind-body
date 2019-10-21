@@ -48,6 +48,18 @@
         "string"
       ]
     },
+    "AdditionalImageURLs": {
+        "type": [
+            "null",
+            "array"
+        ],
+        "items": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    },
     "City": {
       "type": [
         "null",

@@ -58,6 +58,18 @@
         "boolean"
       ]
     },
+    "LocationIds": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [ 
+          "null",
+          "integer"
+        ]
+      }
+    },
     "Layouts": {
       "type": [
         "null",

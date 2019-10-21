@@ -72,7 +72,8 @@ class BaseStream(base):
                     try:
                         del record[field]
                     except KeyError:
-                        LOGGER.info('{} does not exist in current record')
+                        LOGGER.info('{} does not exist in current record'
+                                    .format(field))
                             
             return tx.transform(
                 record,

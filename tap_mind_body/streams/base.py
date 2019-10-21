@@ -21,7 +21,7 @@ class BaseStream(base):
     def get_url(self):
         return 'https://api.mindbodyonline.com/public/v6{}'.format(self.path)
         
-    def get_params(self, offset_value=0, limit_value=25):
+    def get_params(self, offset_value=0, limit_value=200):
         params = {
             'offset': offset_value,
             'limit': limit_value

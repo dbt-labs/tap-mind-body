@@ -1,0 +1,62 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Price": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "OnlinePrice": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "TaxIncluded": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "ProgramId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "TaxRate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "ProductId": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Count": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    }
+  }
+}

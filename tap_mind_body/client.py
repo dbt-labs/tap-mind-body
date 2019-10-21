@@ -23,6 +23,7 @@ class MindBodyClient:
                 'Content-Type': 'application/json',
                 'API-Key': self.config['api_key'],
                 'SiteId': self.config['site_id'],
+                'Authorization': self.config['authorization']
             },
             params=params,
             json=body)

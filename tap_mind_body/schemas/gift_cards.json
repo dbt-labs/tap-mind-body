@@ -1,0 +1,100 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EditableByConsumer": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "CardValue": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "SalePrice": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "SoldOnline": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "GiftCardTerms": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ContactInfo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DisplayLogo": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "LocationIds": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [ 
+          "null",
+          "integer"
+        ]
+      }
+    },
+    "Layouts": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "LayoutId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "LayoutName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

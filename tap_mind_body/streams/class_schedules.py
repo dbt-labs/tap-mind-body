@@ -4,20 +4,18 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class ClassesStream(BaseStream):
+class ClassSchedulesStream(BaseStream):
     API_METHOD = 'GET'
-    TABLE = 'classes'
+    TABLE = 'class_schedules'
     KEY_PROPERTIES = ['id']
-    RESPONSE_KEY = 'Classes'
+    RESPONSE_KEY = 'ClassSchedules'
     IS_PAGINATED = True
     FIELDS_TO_IGNORE = [
-        'Clients',
+        'Classes',
         'Staff',
-        'Visits',
-        'Location',
-        'ClassDescription'
+        'Location'
     ]
-
+        
     @property
     def path(self):
-        return '/class/classes'
+        return '/class/classschedules'

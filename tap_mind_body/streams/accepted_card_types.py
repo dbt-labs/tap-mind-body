@@ -15,7 +15,7 @@ class AcceptedCardTypesStream(BaseStream):
     def path(self):
         return '/sale/acceptedcardtypes'
 
-    def get_stream_data(self, response):
+    def transform_stream_data(self, response):
         transformed = []
         for record in response:
             #record = self.transform_record(record) 

@@ -4,23 +4,23 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class ClientPurchasesStream(BaseStream):
+class ClientAccountBalancesStream(BaseStream):
     API_METHOD = 'GET'
-    TABLE = 'client_purchases'
+    TABLE = 'client_account_balances'
     KEY_PROPERTIES = ['id']
     REQUIRES = ['clients']
-    RESPONSE_KEY = 'Purchases'
+    RESPONSE_KEY = 'Clients'
     IS_PAGINATED = True
 
         
     @property
     def path(self):
-        return '/client/clientpurchases'
+        return '/client/clientaccountbalances'
         
     def get_params(self, client_id, offset_value=0, limit_value=200):
         params = {
             'offset': offset_value,
             'limit': limit_value,
-            'ClientID': client_id
+            'ClientIDs': client_id
         }
-        return params        
+        return params       

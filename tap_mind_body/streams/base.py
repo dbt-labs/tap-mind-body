@@ -6,9 +6,9 @@ import singer.metrics
 import singer.transform
 
 from datetime import timedelta, datetime
-
-
 from tap_framework.streams import BaseStream as base
+from tap_mind_body.state import incorporate, save_state, \
+    get_last_record_value_for_table
 
 
 LOGGER = singer.get_logger()
@@ -49,12 +49,9 @@ class BaseStream(base):
             total_results = self.read_pagination_response(response, 'TotalResults')
             limit = params['limit']
             
-            if num_results < limit:            
+            if num_results < limit:
+                save_state(self.state)
                 break
-            #development limit    
-######REMOVE BEFORE MERGING
-            if offset > 20:
-                break     
             else:
                 offset += limit
                 if self.REQUIRES:
@@ -66,11 +63,12 @@ class BaseStream(base):
     def sync_unpaginated(self, params, url):            
         table = self.TABLE 
         self.get_stream_data(url, params)
+        save_state(self.state)
     
     def get_url(self):
         return 'https://api.mindbodyonline.com/public/v6{}'.format(self.path)
         
-    def get_params(self, offset_value=0, limit_value=10):
+    def get_params(self, offset_value=0, limit_value=200):
         params = {
             'offset': offset_value,
             'limit': limit_value
@@ -109,7 +107,8 @@ class BaseStream(base):
                 record,
                 self.catalog.schema.to_dict(),
                 metadata)    
-                            
+    
+    # parses response and transforms using singer framework                        
     def transform_stream_data(self, response):
         transformed = []
         for record in response[self.RESPONSE_KEY]:
@@ -118,7 +117,7 @@ class BaseStream(base):
 
         return transformed
 
-
+    # parses pagination response    
     def read_pagination_response(self, response, key):
         if 'PaginationResponse' not in response:
             raise ValueError('Got invalid pagination response')
@@ -127,3 +126,16 @@ class BaseStream(base):
         value = response['PaginationResponse'][key]
         
         return value
+        
+    def get_start_date(self):
+        bookmark = get_last_record_value_for_table(self.state, self.TABLE)
+        if bookmark:
+            return bookmark
+        else:
+            return self.config['start_date']
+                 
+    def save_state(self, last_record):
+        if 'LastModifiedDate' in last_record:
+            last_modified_date = last_record['LastModifiedDate']
+            self.state = incorporate(self.state, self.TABLE, "LastModifiedDate", last_modified_date)
+            save_state(self.state)

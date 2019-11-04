@@ -17,11 +17,13 @@ class ClassVisitsStream(BaseStream):
     def path(self):
         return '/class/classvisits'
         
-    def get_params(self, class_id, offset_value=0, limit_value=10):
+    def get_params(self, class_id, offset_value=0, limit_value=200):
+        last_modified_date = self.get_start_date()
         params = {
             'offset': offset_value,
             'limit': limit_value,
-            'ClassID': class_id
+            'ClassID': class_id,
+            'LastModifiedDate': last_modified_date
         }
         return params
         

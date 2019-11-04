@@ -11,13 +11,17 @@ class WaitlistEntriesStream(BaseStream):
     REQUIRES = ['classes']
     RESPONSE_KEY = 'WaitlistEntries'
     IS_PAGINATED = True
+    FIELDS_TO_IGNORE = [
+        'Client',
+        'ClassSchedule'
+    ]
 
         
     @property
     def path(self):
         return '/class/waitlistentries'
         
-    def get_params(self, class_id, offset_value=0, limit_value=10):
+    def get_params(self, class_id, offset_value=0, limit_value=200):
         params = {
             'offset': offset_value,
             'limit': limit_value,

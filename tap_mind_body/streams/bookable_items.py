@@ -4,29 +4,28 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class ClassesStream(BaseStream):
+class BookableItemsStream(BaseStream):
     API_METHOD = 'GET'
-    TABLE = 'classes'
+    TABLE = 'bookable_items'
     KEY_PROPERTIES = ['id']
-    RESPONSE_KEY = 'Classes'
+    REQUIRES = ['session_types']
     IS_PAGINATED = True
+    PARENT_ID = 'SessionTypeId'
+    RESPONSE_KEY = 'Availabilities'
     FIELDS_TO_IGNORE = [
-        'Clients',
         'Staff',
-        'Visits',
-        'Location',
-        'ClassDescription'
+        'Location'
     ]
-
+        
     @property
     def path(self):
-        return '/class/classes'
+        return '/appointment/bookableitems'
         
-    def get_params(self, offset_value=0, limit_value=200):
+    def get_params(self, session_type_id, offset_value=0, limit_value=200):
         last_modified_date = self.get_start_date()
         params = {
             'offset': offset_value,
             'limit': limit_value,
-            'LastModifiedDate': last_modified_date
+            'SessionTypeIds': session_type_id
         }
-        return params    
+        return params

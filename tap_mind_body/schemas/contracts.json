@@ -3,5 +3,312 @@
     "null",
     "object"
   ],
-  "properties": {}
+  "properties": {
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AssignsMembershipId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "AssignsMembershipName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SoldOnline": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "ContractItems": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Type": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Price": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Quantity": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "OneTimeItem": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        }
+      }
+    },
+    "IntroOffer": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AutopaySchedule": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "FrequencyType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "FrequencyValue": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "FrequencyTimeUnit": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "NumberOfAutopays": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "AutopayTriggerType": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ActionUponCompletionOfAutopays": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ClientsChargedOn": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ClientsChargedOnSpecificDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "DiscountAmount": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "DepositAmount": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "FirstAutopayFree": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "LastAutopayFree": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "ClientTerminateOnline": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "MembershipTypeRestrictions": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "LocationPurchaseRestrictionIds": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "integer"
+        ]
+      }
+    },
+    "LocationPurchaseRestrictionNames": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "AgreementTerms": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "RequiresElectronicConfirmation": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AutopayEnabled": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "FirstPaymentAmountSubtotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "FirstPaymentAmountTax": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "FirstPaymentAmountTotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "RecurringPaymentAmountSubtotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "RecurringPaymentAmountTax": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "RecurringPaymentAmountTotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "TotalContractAmountSubtotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "TotalContractAmountTax": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "TotalContractAmountTotal": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    }
+  }
 }

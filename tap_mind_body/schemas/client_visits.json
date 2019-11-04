@@ -1,0 +1,115 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "AppointmentId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "AppointmentGenderPreference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AppointmentStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ClassId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "ClientId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "StartDateTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EndDateTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "LastModifiedDateTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "LateCancelled": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "LocationId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "MakeUp": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ServiceId": {
+      "type": [
+        "null"
+      ]
+    },
+    "SignedIn": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "StaffId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "WebSignup": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Action": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

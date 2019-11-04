@@ -1,0 +1,70 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "RequiredBusinessMode": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "RequiredConsumerMode": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Values": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Active": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "Action": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

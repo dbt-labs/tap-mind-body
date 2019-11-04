@@ -4,7 +4,7 @@
     "object"
   ],
   "properties": {
-      "accepted_card_types": {
+      "active_session_times": {
         "type": [
             "null",
             "string"

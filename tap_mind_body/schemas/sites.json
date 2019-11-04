@@ -1,0 +1,134 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "AcceptsAmericanExpress": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AcceptsDiscover": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AcceptsMasterCard": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AcceptsVisa": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AllowsDashboardAccess": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "ContactEmail": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "LogoUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PageColor1": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PageColor2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PageColor3": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PageColor4": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PricingLevel": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SmsPackageEnabled": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "TaxInclusivePrices": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "CurrencyIsoCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CountryCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "TimeZone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AcceptsDirectDebit": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    }
+  }
+}

@@ -4,7 +4,7 @@
     "object"
   ],
   "properties": {
-      "accepted_card_types": {
+      "client_referral_types": {
         "type": [
             "null",
             "string"

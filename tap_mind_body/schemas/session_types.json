@@ -4,22 +4,16 @@
     "object"
   ],
   "properties": {
-    "ClassDate": {
+    "Type": {
       "type": [
         "null",
         "string"
       ]
     },
-    "ClassId": {
+    "DefaultTimeLength": {
       "type": [
         "null",
         "integer"
-      ]
-    },
-    "EnrollmentDateForward": {
-      "type": [
-        "null",
-        "string"
       ]
     },
     "Id": {
@@ -28,22 +22,42 @@
         "integer"
       ]
     },
-    "RequestDateTime": {
+    "Name": {
       "type": [
         "null",
         "string"
       ]
     },
-    "VisitRefNo": {
+    "NumDeducted": {
       "type": [
         "null",
         "integer"
       ]
     },
-    "Web": {
+    "ProgramId": {
       "type": [
         "null",
-        "boolean"
+        "integer"
+      ]
+    },
+    "Category": {
+      "type": [
+        "null"
+      ]
+    },
+    "CategoryId": {
+      "type": [
+        "null"
+      ]
+    },
+    "Subcategory": {
+      "type": [
+        "null"
+      ]
+    },
+    "SubcategoryId": {
+      "type": [
+        "null"
       ]
     }
   }

@@ -4,7 +4,7 @@
     "object"
   ],
   "properties": {
-      "accepted_card_types": {
+      "required_fields": {
         "type": [
             "null",
             "string"

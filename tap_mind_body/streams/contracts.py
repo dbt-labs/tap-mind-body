@@ -1,11 +1,10 @@
-from tap_mind_body.streams.base import ChildStream
 from tap_mind_body.streams.base import BaseStream
 import singer
 
 LOGGER = singer.get_logger()
 
 
-class ContractsStream(ChildStream):
+class ContractsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'contracts'
     KEY_PROPERTIES = ['id']

@@ -4,46 +4,34 @@
     "object"
   ],
   "properties": {
-    "ClassDate": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "ClassId": {
-      "type": [
-        "null",
-        "integer"
-      ]
-    },
-    "EnrollmentDateForward": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "Id": {
       "type": [
         "null",
         "integer"
       ]
     },
-    "RequestDateTime": {
+    "ClientId": {
       "type": [
         "null",
         "string"
       ]
     },
-    "VisitRefNo": {
+    "Note": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EntryDateTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AppointmentId": {
       "type": [
         "null",
         "integer"
-      ]
-    },
-    "Web": {
-      "type": [
-        "null",
-        "boolean"
       ]
     }
   }

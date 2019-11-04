@@ -1,0 +1,44 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "PermissionGroupName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "IpRestricted": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AllowedPermissions": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "DeniedPermissions": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    }
+  }
+}

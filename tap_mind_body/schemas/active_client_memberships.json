@@ -1,0 +1,106 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "IconCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ActiveDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Count": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Current": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "ExpirationDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PaymentDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Program": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ScheduleType": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CancelOffset": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        }
+      }
+    },
+    "Remaining": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "SiteId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Action": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

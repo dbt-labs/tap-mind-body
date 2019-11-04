@@ -6,9 +6,9 @@ import singer.metrics
 import singer.transform
 
 from datetime import timedelta, datetime
-
-
 from tap_framework.streams import BaseStream as base
+from tap_mind_body.state import incorporate, save_state, \
+    get_last_record_value_for_table
 
 
 LOGGER = singer.get_logger()
@@ -16,8 +16,55 @@ LOGGER = singer.get_logger()
 
 class BaseStream(base):
     KEY_PROPERTIES = ['id']
-    FIELDS_TO_IGNORE = []
-
+    FIELDS_TO_IGNORE = []  
+            
+    # determines sync function based on expected response        
+    def sync_data(self, parent=None):
+        url = self.get_url()
+        # if child object -> provides parent id in parameter
+        if self.REQUIRES:
+            params = self.get_params(parent['Id'])
+        else:
+            params = self.get_params()
+                    
+        if self.IS_PAGINATED:
+            self.sync_paginated(params, url, parent)
+        else:
+            self.sync_unpaginated(params, url)
+    
+    
+    def sync_paginated(self, params, url, parent=None):            
+        table = self.TABLE
+            
+        while True:
+            response, transformed = self.get_stream_data(url, params)
+                
+            # syncs all children given current parent id    
+            for stream in self.substreams:
+                for record in transformed:
+                    stream.sync_data(record)
+                    
+            num_results = self.read_pagination_response(response, 'PageSize')
+            offset = self.read_pagination_response(response, 'RequestedOffset')
+            total_results = self.read_pagination_response(response, 'TotalResults')
+            limit = params['limit']
+            
+            if num_results < limit:
+                save_state(self.state)
+                break
+            else:
+                offset += limit
+                if self.REQUIRES:
+                    params = self.get_params(parent['Id'], offset, limit)
+                else:
+                    params = self.get_params(offset, limit)
+                
+                
+    def sync_unpaginated(self, params, url):            
+        table = self.TABLE 
+        self.get_stream_data(url, params)
+        save_state(self.state)
+    
     def get_url(self):
         return 'https://api.mindbodyonline.com/public/v6{}'.format(self.path)
         
@@ -26,41 +73,22 @@ class BaseStream(base):
             'offset': offset_value,
             'limit': limit_value
         }
-        
         return params
-    
-    def sync_data(self, parent=None):
+        
+    # makes request and returns transformed records    
+    def get_stream_data(self, url, params):
         table = self.TABLE
-
         LOGGER.info('Syncing data for {}'.format(table))
-        url = self.get_url()
-        params = self.get_params()
-
-        while True:
-            response = self.client.make_request(url, self.API_METHOD, params, body=None)
-            transformed = self.get_stream_data(response)
-            
-            with singer.metrics.record_counter(endpoint=table) as counter:
-                singer.write_records(table, transformed)
-                counter.increment(len(transformed))
-            
-            for stream in self.substreams:
-                for record in transformed:
-                    stream.sync_data(record)    
-                    
-            if self.IS_PAGINATED:
-                num_results = self.read_pagination_response(response, 'PageSize')
-                offset = self.read_pagination_response(response, 'RequestedOffset')
-                limit = params['limit']
-                
-                if num_results < limit:            
-                    break 
-                else:
-                    offset += limit
-                    params = self.get_params(offset, limit)  
-            else:
-                break          
-    
+        response = self.client.make_request(url, self.API_METHOD, params)
+        transformed = self.transform_stream_data(response)
+        
+        with singer.metrics.record_counter(endpoint=table) as counter:
+            singer.write_records(table, transformed)
+            counter.increment(len(transformed))
+        
+        return response, transformed  
+        
+    # overwrites framework function to remove unwanted fields within the response
     def transform_record(self, record):
         with singer.Transformer() as tx:
             metadata = {}
@@ -79,8 +107,9 @@ class BaseStream(base):
                 record,
                 self.catalog.schema.to_dict(),
                 metadata)    
-                            
-    def get_stream_data(self, response):
+    
+    # parses response and transforms using singer framework                        
+    def transform_stream_data(self, response):
         transformed = []
         for record in response[self.RESPONSE_KEY]:
             record = self.transform_record(record) 
@@ -88,7 +117,7 @@ class BaseStream(base):
 
         return transformed
 
-
+    # parses pagination response    
     def read_pagination_response(self, response, key):
         if 'PaginationResponse' not in response:
             raise ValueError('Got invalid pagination response')
@@ -98,35 +127,15 @@ class BaseStream(base):
         
         return value
         
-
-class ChildStream(BaseStream):
-    def sync_data(self, parent=None):
-        table = self.TABLE
-        
-        if parent is None:
-            raise RuntimeError("Parent is required in substream {}".format(table))
-
-        LOGGER.info('Syncing data for {}'.format(table))
-        url = self.get_url()
-        params = self.get_params(parent['Id'])
-
-        while True:
-            response = self.client.make_request(url, self.API_METHOD, params, body=None)
-            transformed = self.get_stream_data(response)
-            
-            with singer.metrics.record_counter(endpoint=table) as counter:
-                singer.write_records(table, transformed)
-                counter.increment(len(transformed))
-            
-            if self.IS_PAGINATED:
-                num_results = self.read_pagination_response(response, 'PageSize')
-                offset = self.read_pagination_response(response, 'RequestedOffset')
-                limit = params['limit']
-                
-                if num_results < limit:            
-                    break 
-                else:
-                    offset += limit
-                    params = self.get_params(parent['Id'], offset, limit)
-            else:
-                break        
+    def get_start_date(self):
+        bookmark = get_last_record_value_for_table(self.state, self.TABLE)
+        if bookmark:
+            return bookmark
+        else:
+            return self.config['start_date']
+                 
+    def save_state(self, last_record):
+        if 'LastModifiedDate' in last_record:
+            last_modified_date = last_record['LastModifiedDate']
+            self.state = incorporate(self.state, self.TABLE, "LastModifiedDate", last_modified_date)
+            save_state(self.state)

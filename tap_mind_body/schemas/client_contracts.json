@@ -4,75 +4,55 @@
     "object"
   ],
   "properties": {
+    "AgreementDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AutopayStatus": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ContractName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EndDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "Id": {
       "type": [
         "null",
         "integer"
       ]
     },
-    "SaleDate": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "SaleTime": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "SaleDateTime": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "ClientId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "PurchasedItems": {
-      "type": [
-        "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "Id": {
-            "type": [
-              "null",
-              "integer"
-            ]
-          },
-          "IsService": {
-            "type": [
-              "null",
-              "boolean"
-            ]
-          },
-          "BarcodeId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        }
-      }
-    },
-    "LocationId": {
+    "OriginationLocationId": {
       "type": [
         "null",
         "integer"
       ]
     },
-    "Payments": {
+    "StartDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SiteId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "UpcomingAutopayEvents": {
       "type": [
         "null",
         "array"
@@ -83,31 +63,25 @@
           "object"
         ],
         "properties": {
-          "Id": {
+          "ClientContractId": {
             "type": [
               "null",
               "integer"
             ]
           },
-          "Amount": {
+          "ChargeAmount": {
             "type": [
               "null",
-              "integer"
+              "number"
             ]
           },
-          "Method": {
-            "type": [
-              "null",
-              "integer"
-            ]
-          },
-          "Type": {
+          "PaymentMethod": {
             "type": [
               "null",
               "string"
             ]
           },
-          "Notes": {
+          "ScheduleDate": {
             "type": [
               "null",
               "string"

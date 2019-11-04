@@ -1,0 +1,567 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Clients": {
+      "type": [
+        "null"
+      ]
+    },
+    "Course": {
+      "type": [
+        "null"
+      ]
+    },
+    "SemesterId": {
+      "type": [
+        "null"
+      ]
+    },
+    "IsAvailable": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "ClassDescription": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Active": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "Description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "ImageURL": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "LastUpdated": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Level": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "Id": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "Name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "Description": {
+              "type": [
+                "null"
+              ]
+            }
+          }
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Notes": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Prereq": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Program": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "Id": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "Name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "ScheduleType": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "CancelOffset": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            }
+          }
+        },
+        "SessionType": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "properties": {
+            "Type": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "DefaultTimeLength": {
+              "type": [
+                "null"
+              ]
+            },
+            "Id": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "Name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "NumDeducted": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "ProgramId": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            }
+          }
+        },
+        "Category": {
+          "type": [
+            "null"
+          ]
+        },
+        "CategoryId": {
+          "type": [
+            "null"
+          ]
+        },
+        "Subcategory": {
+          "type": [
+            "null"
+          ]
+        },
+        "SubcategoryId": {
+          "type": [
+            "null"
+          ]
+        }
+      }
+    },
+    "DaySunday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DayMonday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DayTuesday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DayWednesday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DayThursday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DayFriday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "DaySaturday": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AllowOpenEnrollment": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AllowDateForwardEnrollment": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "StartTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EndTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "StartDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "EndDate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Staff": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "AppointmentInstructor": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "AlwaysAllowDoubleBooking": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "Bio": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "City": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null"
+          ]
+        },
+        "FirstName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "HomePhone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "IndependentContractor": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "IsMale": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "LastName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "MobilePhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null"
+          ]
+        },
+        "PostalCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "ClassTeacher": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "SortOrder": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "State": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "WorkPhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "ImageUrl": {
+          "type": [
+            "null"
+          ]
+        }
+      }
+    },
+    "Location": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Address2": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Amenities": {
+          "type": [
+            "null"
+          ]
+        },
+        "BusinessDescription": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "City": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Description": {
+          "type": [
+            "null"
+          ]
+        },
+        "HasClasses": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "Latitude": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Longitude": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PhoneExtension": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "PostalCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SiteID": {
+          "type": [
+            "null"
+          ]
+        },
+        "StateProvCode": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Tax1": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Tax2": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Tax3": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Tax4": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "Tax5": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "TotalNumberOfRatings": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "AverageRating": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "TotalNumberOfDeals": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        }
+      }
+    }
+  }
+}

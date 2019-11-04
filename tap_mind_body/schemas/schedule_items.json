@@ -1,0 +1,388 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Address": {
+      "type": [
+        "null"
+      ]
+    },
+    "AppointmentInstructor": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AlwaysAllowDoubleBooking": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Bio": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "City": {
+      "type": [
+        "null"
+      ]
+    },
+    "Country": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null"
+      ]
+    },
+    "FirstName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "HomePhone": {
+      "type": [
+        "null"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "IndependentContractor": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "IsMale": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "LastName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "MobilePhone": {
+      "type": [
+        "null"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null"
+      ]
+    },
+    "PostalCode": {
+      "type": [
+        "null"
+      ]
+    },
+    "ClassTeacher": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "SortOrder": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "State": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "WorkPhone": {
+      "type": [
+        "null"
+      ]
+    },
+    "ImageUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Appointments": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "GenderPreference": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Duration": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ProviderId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Status": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "StartDateTime": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EndDateTime": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "StaffRequested": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "ProgramId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "SessionTypeId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "LocationId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "StaffId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ClientId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "FirstAppointment": {
+            "type": [
+              "null",
+              "boolean"
+            ]
+          },
+          "ClientServiceId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Resources": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "properties": {
+                "Id": {
+                  "type": [
+                    "null",
+                    "integer"
+                  ]
+                },
+                "Name": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Unavailabilities": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "StartDateTime": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "EndDateTime": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "Availabilities": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "SessionType": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Type": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "DefaultTimeLength": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "NumDeducted": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "ProgramId": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Category": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "CategoryId": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Subcategory": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "SubcategoryId": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

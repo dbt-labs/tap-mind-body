@@ -1,0 +1,32 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "DisplayName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Value": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

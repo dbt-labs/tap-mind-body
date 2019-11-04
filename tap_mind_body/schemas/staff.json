@@ -1,0 +1,134 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "Address": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "AppointmentInstructor": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "AlwaysAllowDoubleBooking": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "Bio": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "City": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Country": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "FirstName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "HomePhone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "IndependentContractor": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "IsMale": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "LastName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "MobilePhone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "PostalCode": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ClassTeacher": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "SortOrder": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "State": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "WorkPhone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ImageUrl": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

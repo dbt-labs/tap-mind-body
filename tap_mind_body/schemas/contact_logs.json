@@ -1,0 +1,91 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "properties": {
+    "ContactLogs": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Id": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Text": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "CreatedDateTime": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "FollowupByDate": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ContactMethod": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ContactName": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+    },
+    "ContactLogComment": {
+        "type": [
+            "null",
+            "object"
+        ],
+        "properties": {
+            "Id": {
+                "type": [
+                    "null",
+                    "integer"
+                ]
+            },
+            "Text": {
+                "type": [
+                    "null",
+                    "string"
+                ]
+            },
+            "CreatedDateTime": {
+                "type": [
+                    "null",
+                    "string"
+                ]
+            },
+            "CreatedBy": {
+                "type": [
+                    "null",
+                    "string"
+                ]
+            }
+            
+        }
+    }
+  }
+}
+}

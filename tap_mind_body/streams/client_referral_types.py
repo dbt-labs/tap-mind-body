@@ -4,21 +4,21 @@ import singer
 LOGGER = singer.get_logger()
 
 
-class AcceptedCardTypesStream(BaseStream):
+class ClientReferralTypesStream(BaseStream):
     API_METHOD = 'GET'
-    TABLE = 'accepted_card_types'
+    TABLE = 'client_referral_types'
     KEY_PROPERTIES = ['id']
     IS_PAGINATED = False
 
         
     @property
     def path(self):
-        return '/sale/acceptedcardtypes'
-    
+        return '/client/clientreferraltypes'
+        
     def transform_stream_data(self, response):
         transformed = []
-        for record in response:
-            record = self.transform_record({'accepted_card_types': record}) 
+        for record in response['ReferralTypes']:
+            record = self.transform_record({'client_referral_types': record}) 
             transformed.append(record)
 
-        return transformed    
+        return transformed            

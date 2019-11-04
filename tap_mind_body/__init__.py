@@ -4,6 +4,7 @@ import singer
 
 import tap_framework
 
+from tap_framework.state import save_state
 from tap_mind_body.client import MindBodyClient
 from tap_mind_body.streams import AVAILABLE_STREAMS
 from tap_framework.streams import is_selected
@@ -73,8 +74,8 @@ class MindBodyRunner(tap_framework.Runner):
                 LOGGER.error('Failed to sync endpoint {}, moving on!'
                              .format(stream.TABLE))
                 raise e
-    # still need to add state
-    #    save_state(self.state)
+        LOGGER.info('saving state with {}'.format(self.state))        
+        save_state(self.state)
 
 @singer.utils.handle_top_exception(LOGGER)
 def main():

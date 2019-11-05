@@ -10,7 +10,7 @@ class CrossReigonalClientAssociationsStream(BaseStream):
     KEY_PROPERTIES = ['id']
     REQUIRES = ['clients']
     RESPONSE_KEY = 'CrossRegionalClientAssociations'
-    IS_PAGINATED = False
+    IS_PAGINATED = True
 
         
     @property
@@ -23,4 +23,25 @@ class CrossReigonalClientAssociationsStream(BaseStream):
             'limit': limit_value,
             'ClientID': client_id
         }
-        return params       
+                
+    def get_stream_data(self, url, params):
+        table = self.TABLE
+        LOGGER.info('Syncing data for {}'.format(table))
+        
+        try:
+            response = self.client.make_request(url, self.API_METHOD, params)
+            if response is None:
+                return None, None
+        except RuntimeError as e:
+            if 'ClientNotFound' in str(e):
+                return None, None
+            else:
+                raise
+                
+        transformed = self.transform_stream_data(response)
+        
+        with singer.metrics.record_counter(endpoint=table) as counter:
+            singer.write_records(table, transformed)
+            counter.increment(len(transformed))
+        
+        return response, transformed        

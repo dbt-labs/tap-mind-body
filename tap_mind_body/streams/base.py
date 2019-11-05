@@ -38,6 +38,10 @@ class BaseStream(base):
             
         while True:
             response, transformed = self.get_stream_data(url, params)
+
+            # error handling for unexpected responses
+            if response is None:
+                break    
                 
             # syncs all children given current parent id    
             for stream in self.substreams:

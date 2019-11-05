@@ -4,37 +4,23 @@
     "object"
   ],
   "properties": {
-    "CrossRegionalClientAssociations": {
+    "SiteId": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "SiteId": {
-            "type": [
-              "null",
-              "integer"
-            ]
-          },
-          "ClientId": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "UniqueId": {
-            "type": [
-              "null",
-              "integer"
-            ]
-          }
-        }
-      }
+        "integer"
+      ]
+    },
+    "ClientId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "UniqueId": {
+      "type": [
+        "null",
+        "integer"
+      ]
     }
   }
 }

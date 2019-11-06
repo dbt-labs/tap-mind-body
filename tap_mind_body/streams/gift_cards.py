@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class GiftCardsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'gift_cards'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     RESPONSE_KEY = 'GiftCards'
     IS_PAGINATED = True
     FIELDS_TO_IGNORE = ['MembershipRestrictionIds']

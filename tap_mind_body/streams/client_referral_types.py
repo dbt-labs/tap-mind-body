@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class ClientReferralTypesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'client_referral_types'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     IS_PAGINATED = False
 
         

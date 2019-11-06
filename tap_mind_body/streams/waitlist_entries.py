@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class WaitlistEntriesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'waitlist_entries'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     REQUIRES = ['classes']
     RESPONSE_KEY = 'WaitlistEntries'
     IS_PAGINATED = True

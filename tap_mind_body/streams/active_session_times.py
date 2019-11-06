@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class ActiveSessionTimesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'active_session_times'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     IS_PAGINATED = True
 
     @property

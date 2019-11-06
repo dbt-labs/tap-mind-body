@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class AcceptedCardTypesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'accepted_card_types'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     IS_PAGINATED = False
 
         

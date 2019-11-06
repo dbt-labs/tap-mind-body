@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class ActiveClientMembershipsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'active_client_memberships'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     REQUIRES = ['clients']
     RESPONSE_KEY = 'ClientMemberships'
     IS_PAGINATED = True

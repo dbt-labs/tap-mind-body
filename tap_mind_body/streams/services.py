@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class ServicesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'services'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     RESPONSE_KEY = 'Services'
     IS_PAGINATED = True
 

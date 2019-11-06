@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class StaffPermissionsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'staff_permissions'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     REQUIRES = ['staff']
     RESPONSE_KEY = 'StaffPermissions'
     IS_PAGINATED = False

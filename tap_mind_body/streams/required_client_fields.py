@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class RequiredClientFieldsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'required_client_fields'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     RESPONSE_KEY = 'RequiredClientFields'
     IS_PAGINATED = False
 

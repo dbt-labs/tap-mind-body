@@ -15,9 +15,20 @@ from tap_mind_body.state import incorporate, save_state, \
 LOGGER = singer.get_logger()
         
 class BaseStream(base):
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     FIELDS_TO_IGNORE = []  
-            
+    
+    def sync(self):
+        LOGGER.info('Syncing stream {} with {}'
+                    .format(self.catalog.tap_stream_id,
+                            self.__class__.__name__))
+                            
+        self.write_schema()
+        
+        for stream in self.substreams:
+            singer.write_schema(stream.TABLE, stream.catalog.schema.to_dict(), stream.KEY_PROPERTIES)
+        return self.sync_data()
+                    
     # determines sync function based on expected response        
     def sync_data(self, parent=None):
         url = self.get_url()
@@ -45,8 +56,6 @@ class BaseStream(base):
                 
             # syncs all children given current parent id    
             for stream in self.substreams:
-                # write schema for children
-                singer.write_schema(stream.TABLE, stream.catalog.schema.to_dict(), stream.KEY_PROPERTIES)
                 for record in transformed:
                     stream.sync_data(record)
                     
@@ -99,7 +108,6 @@ class BaseStream(base):
         with singer.Transformer() as tx:
             metadata = {}
 
-            #LOGGER.info('the metadata is {}'.format(self.catalog.metadata))
             if self.catalog.metadata is not None:
                 metadata = singer.metadata.to_map(self.catalog.metadata)
                 

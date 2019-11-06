@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class BookableItemsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'bookable_items'
-    KEY_PROPERTIES = ['id']
+    KEY_PROPERTIES = ['Id']
     REQUIRES = ['session_types']
     IS_PAGINATED = True
     PARENT_ID = 'SessionTypeId'

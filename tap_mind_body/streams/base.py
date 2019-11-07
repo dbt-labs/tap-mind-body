@@ -1,4 +1,3 @@
-import os
 import math
 import pytz
 import singer
@@ -26,7 +25,11 @@ class BaseStream(base):
         self.write_schema()
         
         for stream in self.substreams:
-            singer.write_schema(stream.TABLE, stream.catalog.schema.to_dict(), stream.KEY_PROPERTIES)
+            singer.write_schema(
+                stream.TABLE, 
+                stream.catalog.schema.to_dict(), 
+                stream.KEY_PROPERTIES
+            )
         return self.sync_data()
                     
     # determines sync function based on expected response        
@@ -153,4 +156,4 @@ class BaseStream(base):
         if 'LastModifiedDate' in last_record:
             last_modified_date = last_record['LastModifiedDate']
             self.state = incorporate(self.state, self.TABLE, "LastModifiedDate", last_modified_date)
-            save_state(self.state)
+            singer.write_state(self.state)

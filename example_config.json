@@ -1,5 +1,7 @@
 {
     "api_key": "API-Key",
     "site_id": "SiteId",
-    "authorization": "AccessToken"
+    "user_name": "admin",
+    "password": "alligator5",
+    "start_date": "0001-01-01T00:00:00"
 }

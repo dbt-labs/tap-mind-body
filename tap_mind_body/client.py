@@ -11,6 +11,7 @@ class MindBodyClient:
 
     def __init__(self, config):
         self.config = config
+        self.auth_token = self.get_auth_token()
         
     def get_auth_token(self):
         response = requests.request(
@@ -32,9 +33,17 @@ class MindBodyClient:
             LOGGER.info('status={}'.format(response.status_code))
             raise RuntimeError(response.text)
 
-        raw_response = response.json()
+        try:
+            raw_response = response.json()
+        except ValueError:
+            raise RuntimeError(response.text)
+                
         auth_token = raw_response.get('AccessToken')
-            
+        if auth_token is None:
+            raise RuntimeError(
+                '"AccessToken" Not Found in Response: {}'.format(raw_response)
+            )   
+             
         return auth_token    
 
     def make_request(self, url, method, params=None, body=None):
@@ -48,7 +57,7 @@ class MindBodyClient:
                 'Content-Type': 'application/json',
                 'API-Key': self.config['api_key'],
                 'SiteId': self.config['site_id'],
-                'Authorization': self.get_auth_token()
+                'Authorization': self.auth_token
             },
             params=params,
             json=body)

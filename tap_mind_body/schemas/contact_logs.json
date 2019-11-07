@@ -4,88 +4,516 @@
     "object"
   ],
   "properties": {
-    "ContactLogs": {
+    "Id": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "Id": {
-            "type": [
-              "null",
-              "integer"
-            ]
-          },
-          "Text": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "CreatedDateTime": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "FollowupByDate": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "ContactMethod": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "ContactName": {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        }
+        "integer"
+      ]
     },
-    "ContactLogComment": {
-        "type": [
+    "Text": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CreatedDateTime": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "FollowupByDate": {
+      "type": [
+        "null"
+      ]
+    },
+    "ContactMethod": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ContactName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "Client": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "AppointmentGenderPreference": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "BirthDate": {
+          "type": [
+            "null"
+          ]
+        },
+        "Country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CreationDate": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "CustomClientFields": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Value": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "DataType": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "Name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "ClientCreditCard": {
+          "type": [
+            "null"
+          ]
+        },
+        "ClientIndexes": {
+          "type": [
+            "null"
+          ]
+        },
+        "ClientRelationships": {
+          "type": [
+            "null"
+          ]
+        },
+        "FirstAppointmentDate": {
+          "type": [
+            "null"
+          ]
+        },
+        "FirstName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "IsCompany": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "IsProspect": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "LastName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Liability": {
+          "type": [
             "null",
             "object"
-        ],
-        "properties": {
-            "Id": {
-                "type": [
-                    "null",
-                    "integer"
-                ]
+          ],
+          "properties": {
+            "AgreementDate": {
+              "type": [
+                "null",
+                "string"
+              ]
             },
-            "Text": {
-                "type": [
-                    "null",
-                    "string"
-                ]
+            "IsReleased": {
+              "type": [
+                "null",
+                "boolean"
+              ]
             },
-            "CreatedDateTime": {
-                "type": [
-                    "null",
-                    "string"
-                ]
-            },
-            "CreatedBy": {
-                "type": [
-                    "null",
-                    "string"
-                ]
+            "ReleasedBy": {
+              "type": [
+                "null"
+              ]
             }
-            
+          }
+        },
+        "LiabilityRelease": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "MembershipIcon": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "MobileProvider": {
+          "type": [
+            "null"
+          ]
+        },
+        "Notes": {
+          "type": [
+            "null"
+          ]
+        },
+        "State": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "UniqueId": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "LastModifiedDateTime": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "RedAlert": {
+          "type": [
+            "null"
+          ]
+        },
+        "YellowAlert": {
+          "type": [
+            "null"
+          ]
+        },
+        "MiddleName": {
+          "type": [
+            "null"
+          ]
+        },
+        "ProspectStage": {
+          "type": [
+            "null"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "MobilePhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "HomePhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "WorkPhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "AccountBalance": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "AddressLine1": {
+          "type": [
+            "null"
+          ]
+        },
+        "AddressLine2": {
+          "type": [
+            "null"
+          ]
+        },
+        "City": {
+          "type": [
+            "null"
+          ]
+        },
+        "PostalCode": {
+          "type": [
+            "null"
+          ]
+        },
+        "WorkExtension": {
+          "type": [
+            "null"
+          ]
+        },
+        "ReferredBy": {
+          "type": [
+            "null"
+          ]
+        },
+        "PhotoUrl": {
+          "type": [
+            "null"
+          ]
+        },
+        "EmergencyContactInfoName": {
+          "type": [
+            "null"
+          ]
+        },
+        "EmergencyContactInfoEmail": {
+          "type": [
+            "null"
+          ]
+        },
+        "EmergencyContactInfoPhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "EmergencyContactInfoRelationship": {
+          "type": [
+            "null"
+          ]
+        },
+        "Gender": {
+          "type": [
+            "null"
+          ]
+        },
+        "LastFormulaNotes": {
+          "type": [
+            "null"
+          ]
+        },
+        "Active": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "SalesReps": {
+          "type": [
+            "null"
+          ]
+        },
+        "Status": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "Action": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "SendAccountEmails": {
+          "type": [
+            "null"
+          ]
+        },
+        "SendAccountTexts": {
+          "type": [
+            "null"
+          ]
+        },
+        "SendPromotionalEmails": {
+          "type": [
+            "null"
+          ]
+        },
+        "SendPromotionalTexts": {
+          "type": [
+            "null"
+          ]
+        },
+        "SendScheduleEmails": {
+          "type": [
+            "null"
+          ]
+        },
+        "SendScheduleTexts": {
+          "type": [
+            "null"
+          ]
         }
+      }
+    },
+    "CreatedBy": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "Address": {
+          "type": [
+            "null"
+          ]
+        },
+        "AppointmentInstructor": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "AlwaysAllowDoubleBooking": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "Bio": {
+          "type": [
+            "null"
+          ]
+        },
+        "City": {
+          "type": [
+            "null"
+          ]
+        },
+        "Country": {
+          "type": [
+            "null"
+          ]
+        },
+        "Email": {
+          "type": [
+            "null"
+          ]
+        },
+        "FirstName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "HomePhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "Id": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "IndependentContractor": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "IsMale": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "LastName": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "MobilePhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "Name": {
+          "type": [
+            "null"
+          ]
+        },
+        "PostalCode": {
+          "type": [
+            "null"
+          ]
+        },
+        "ClassTeacher": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "SortOrder": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "State": {
+          "type": [
+            "null"
+          ]
+        },
+        "WorkPhone": {
+          "type": [
+            "null"
+          ]
+        },
+        "ImageUrl": {
+          "type": [
+            "null"
+          ]
+        }
+      }
+    },
+    "AssignedTo": {
+      "type": [
+        "null"
+      ]
     }
   }
-}
 }

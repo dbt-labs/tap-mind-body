@@ -11,23 +11,6 @@ class ContactLogsStream(BaseStream):
     REQUIRES = ['clients']
     RESPONSE_KEY = 'ContactLogs'
     IS_PAGINATED = True
-    FIELDS_TO_IGNORE = [
-        'Client',
-        'Staff',
-        'ClientCreditCard',
-        'ClientRelationship',
-        'Liability',
-        'SalesRep',
-        'Appointment',
-        'Unavailability' ,
-        'Availability',
-        'Relationship',
-        'Resource',
-        'SessionType',
-        'Program',
-        'Location',
-        'Amenity'
-    ]
         
     @property
     def path(self):

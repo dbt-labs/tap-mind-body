@@ -10,7 +10,7 @@ class ClientContractsStream(BaseStream):
     KEY_PROPERTIES = ['Id']
     REQUIRES = ['clients']
     RESPONSE_KEY = 'Contracts'
-    IS_PAGINATED = False
+    IS_PAGINATED = True
 
         
     @property

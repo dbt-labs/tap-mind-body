@@ -18,3 +18,12 @@ class ClientsStream(BaseStream):
     @property
     def path(self):
         return '/client/clients'
+        
+    def get_params(self, offset_value=0, limit_value=200):
+        last_modified_date = self.get_start_date()
+        params = {
+            'offset': offset_value,
+            'limit': limit_value,
+            'LastModifiedDate': last_modified_date
+        }
+        return params    

@@ -25,7 +25,7 @@ class ActiveSessionTimesStream(BaseStream):
     def transform_stream_data(self, response):
         transformed = []
         for record in response['ActiveSessionTimes']:
-            record = self.transform_record({'active_session_times': record}) 
+            record = self.transform_record({'active_session_times': record, 'Id':hash(record)}) 
             transformed.append(record)
 
         return transformed    

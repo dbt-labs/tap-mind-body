@@ -10,9 +10,14 @@
         "string"
       ]
     },
-    "Name": {
+    "Id": {
       "type": [
         "null",
+        "integer"
+      ]
+    },
+    "Name": {
+      "type": [
         "string"
       ]
     },

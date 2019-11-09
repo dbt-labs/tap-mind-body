@@ -19,7 +19,7 @@
     "DiscountPercentage": {
       "type": [
         "null",
-        "number"
+        "integer"
       ]
     },
     "SellOnline": {
@@ -42,19 +42,19 @@
           "Price": {
             "type": [
               "null",
-              "number"
+              "integer"
             ]
           },
           "OnlinePrice": {
             "type": [
               "null",
-              "number"
+              "integer"
             ]
           },
           "TaxIncluded": {
             "type": [
               "null",
-              "number"
+              "integer"
             ]
           },
           "ProgramId": {
@@ -66,13 +66,13 @@
           "TaxRate": {
             "type": [
               "null",
-              "number"
+              "integer"
             ]
           },
           "ProductId": {
             "type": [
               "null",
-              "number"
+              "integer"
             ]
           },
           "Id": {
@@ -92,6 +92,114 @@
               "null",
               "integer"
             ]
+          }
+        }
+      }
+    },
+    "Products": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "Price": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "TaxIncluded": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "TaxRate": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "GroupId": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "Name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "OnlinePrice": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ShortDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "LongDescription": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "Color": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
+          },
+          "Size": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "properties": {
+              "Id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "Name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            }
           }
         }
       }

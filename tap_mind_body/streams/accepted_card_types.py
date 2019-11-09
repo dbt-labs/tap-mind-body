@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class AcceptedCardTypesStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'accepted_card_types'
-    KEY_PROPERTIES = ['Id']
+    KEY_PROPERTIES = ['accepted_card_types']
     IS_PAGINATED = False
 
         
@@ -18,7 +18,7 @@ class AcceptedCardTypesStream(BaseStream):
     def transform_stream_data(self, response):
         transformed = []
         for record in response:
-            record = self.transform_record({'accepted_card_types': record}) 
+            record = self.transform_record({'accepted_card_types': record, 'Id': hash(record)}) 
             transformed.append(record)
 
         return transformed    

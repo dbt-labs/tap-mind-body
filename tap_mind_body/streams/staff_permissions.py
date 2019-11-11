@@ -27,10 +27,12 @@ class StaffPermissionsStream(BaseStream):
          
     def transform_stream_data(self, response):
         transformed = []
+        pk = hash(response.get('PermissionGroupName'))
+        response.update({'Id': pk})
         record = self.transform_record(response) 
         transformed.append(record)
         return transformed
-            
+                    
     def get_stream_data(self, url, params):
         table = self.TABLE
         LOGGER.info('Syncing data for {}'.format(table))

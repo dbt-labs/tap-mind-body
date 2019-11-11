@@ -4,6 +4,12 @@
     "object"
   ],
   "properties": {
+      "Id": {
+        "type": [
+          "null",
+          "integer"
+        ]
+    },
     "Sale": {
       "type": [
         "null",
@@ -55,6 +61,12 @@
                 "type": [
                   "null",
                   "integer"
+                ]
+              },        
+              "BarcodeId": {
+                "type": [
+                  "null",
+                  "string"
                 ]
               },
               "IsService": {

@@ -34,6 +34,24 @@
         "string"
       ]
     },
+    "ProductId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SiteId": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ServiceName": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "StartDateTime": {
       "type": [
         "null",

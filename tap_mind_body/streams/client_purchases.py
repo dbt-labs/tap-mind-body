@@ -9,13 +9,25 @@ class ClientPurchasesStream(BaseStream):
     TABLE = 'client_purchases'
     KEY_PROPERTIES = ['Id']
     REQUIRES = ['clients']
-    RESPONSE_KEY = 'Purchases'
     IS_PAGINATED = True
 
         
     @property
     def path(self):
         return '/client/clientpurchases'
+        
+    def transform_stream_data(self, response):
+        transformed = []
+        for record in response['Purchases']:
+            if record:
+                #extracts id from sales object and makes it top-level
+                nested_id = record['Sale'].get('Id')
+                record.update({'Id':nested_id})
+                
+                record = self.transform_record(record) 
+                transformed.append(record)
+
+        return transformed 
         
     def get_params(self, client_id, offset_value=0, limit_value=200):
         params = {

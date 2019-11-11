@@ -18,7 +18,7 @@ class AcceptedCardTypesStream(BaseStream):
     def transform_stream_data(self, response):
         transformed = []
         for record in response:
-            record = self.transform_record({'accepted_card_types': record}) 
+            record = self.transform_record({'accepted_card_types': record, 'Id': hash(record)}) 
             transformed.append(record)
 
         return transformed    

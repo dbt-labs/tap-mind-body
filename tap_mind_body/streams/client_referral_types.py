@@ -18,7 +18,7 @@ class ClientReferralTypesStream(BaseStream):
     def transform_stream_data(self, response):
         transformed = []
         for record in response['ReferralTypes']:
-            record = self.transform_record({'client_referral_types': record}) 
+            record = self.transform_record({'client_referral_types': record, 'Id': hash(record)}) 
             transformed.append(record)
 
         return transformed            

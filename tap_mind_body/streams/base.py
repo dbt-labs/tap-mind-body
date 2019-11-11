@@ -70,11 +70,6 @@ class BaseStream(base):
             if num_results < limit:
                 save_state(self.state)
                 break
-#########
-# REMOVE THIS
-########                
-            if offset > 20:
-                break    
             else:
                 offset += limit
                 if self.REQUIRES:

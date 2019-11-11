@@ -23,6 +23,7 @@ class CrossReigonalClientAssociationsStream(BaseStream):
             'limit': limit_value,
             'ClientID': client_id
         }
+        return params
                 
     def get_stream_data(self, url, params):
         table = self.TABLE

@@ -153,7 +153,7 @@ class BaseStream(base):
             return self.config['start_date']
                  
     def save_state(self, last_record):
-        if 'LastModifiedDate' in last_record:
-            last_modified_date = last_record['LastModifiedDate']
-            self.state = incorporate(self.state, self.TABLE, "LastModifiedDate", last_modified_date)
+        if 'LastModifiedDateTime' in last_record:
+            last_modified_date = last_record['LastModifiedDateTime']
+            self.state = incorporate(self.state, self.TABLE, "LastModifiedDateTime", last_modified_date)
             singer.write_state(self.state)

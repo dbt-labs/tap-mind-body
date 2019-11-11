@@ -10,6 +10,12 @@
         "string"
       ]
     },
+    "Id": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
     "IpRestricted": {
       "type": [
         "null",

@@ -19,7 +19,7 @@ class RequiredClientFieldsStream(BaseStream):
     def transform_stream_data(self, response):
         transformed = []
         for record in response['RequiredClientFields']:
-            record = self.transform_record({'required_fields': record}) 
+            record = self.transform_record({'required_fields': record, 'Id': hash(record)}) 
             transformed.append(record)
 
         return transformed    

@@ -18,11 +18,7 @@ class AppointmentOptionsStream(BaseStream):
         transformed = []
         for record in response['Options']:
             pk = hash(record.get('Name'))
-            LOGGER.info('the pk is {}'.format(pk))
-            LOGGER.info('the record is {}'.format(record))
-            
             record.update({'Id': pk})
-            LOGGER.info('the updated record is {}'.format(record))
             new_record = self.transform_record(record) 
             transformed.append(new_record)
 

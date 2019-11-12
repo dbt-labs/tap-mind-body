@@ -7,7 +7,7 @@ LOGGER = singer.get_logger()
 class CrossReigonalClientAssociationsStream(BaseStream):
     API_METHOD = 'GET'
     TABLE = 'cross_reigional_client_associations'
-    KEY_PROPERTIES = ['Id']
+    KEY_PROPERTIES = ['UniqueId']
     REQUIRES = ['clients']
     RESPONSE_KEY = 'CrossRegionalClientAssociations'
     IS_PAGINATED = True

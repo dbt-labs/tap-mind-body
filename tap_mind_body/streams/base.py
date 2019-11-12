@@ -7,8 +7,7 @@ import singer.transform
 
 from datetime import timedelta, datetime
 from tap_framework.streams import BaseStream as base
-from tap_mind_body.state import incorporate, save_state, \
-    get_last_record_value_for_table
+from tap_mind_body.state import incorporate, get_last_record_value_for_table
 
 
 LOGGER = singer.get_logger()
@@ -68,7 +67,6 @@ class BaseStream(base):
             limit = params['limit']
             
             if num_results < limit:
-                save_state(self.state)
                 break
             else:
                 offset += limit
@@ -81,7 +79,6 @@ class BaseStream(base):
     def sync_unpaginated(self, params, url):            
         table = self.TABLE 
         self.get_stream_data(url, params)
-        save_state(self.state)
     
     def get_url(self):
         return 'https://api.mindbodyonline.com/public/v6{}'.format(self.path)

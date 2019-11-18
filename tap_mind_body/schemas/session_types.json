@@ -42,22 +42,26 @@
     },
     "Category": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "CategoryId": {
       "type": [
-        "null"
+        "null",
+        "integer"
       ]
     },
     "Subcategory": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "SubcategoryId": {
       "type": [
-        "null"
+        "null",
+        "integer"
       ]
     }
   }

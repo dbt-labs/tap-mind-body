@@ -27,6 +27,7 @@ class ClassesStream(BaseStream):
         params = {
             'offset': offset_value,
             'limit': limit_value,
-            'LastModifiedDate': last_modified_date
+            #'LastModifiedDate': last_modified_date
+            'StartDateTime':'"' + last_modified_date + '""'
         }
         return params    

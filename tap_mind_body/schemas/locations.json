@@ -16,6 +16,30 @@
         "string"
       ]
     },
+    "Category": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "CategoryId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
+    "Subcategory": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "SubcategoryId": {
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
     "Amenities": {
       "type": [
         "null",
@@ -68,7 +92,8 @@
     },
     "Description": {
       "type": [
-        "null"
+        "null",
+        "string"
       ]
     },
     "HasClasses": {

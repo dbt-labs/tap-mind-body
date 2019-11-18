@@ -74,6 +74,11 @@ class BaseStream(base):
                     params = self.get_params(parent['Id'], offset, limit)
                 else:
                     params = self.get_params(offset, limit)
+                    if transformed:
+                        last_record = transformed[-1]
+                        self.save_state(last_record)
+                    else:
+                        LOGGER.info('no record to save')
                 
                 
     def sync_unpaginated(self, params, url):            
@@ -150,7 +155,10 @@ class BaseStream(base):
             return self.config['start_date']
                  
     def save_state(self, last_record):
+        LOGGER.info('the last record is {}'.format(last_record))
         if 'LastModifiedDateTime' in last_record:
+            LOGGER.info('starting to save')
             last_modified_date = last_record['LastModifiedDateTime']
             self.state = incorporate(self.state, self.TABLE, "LastModifiedDateTime", last_modified_date)
+            LOGGER.info('Updating state. with {}'.format(self.state))
             singer.write_state(self.state)

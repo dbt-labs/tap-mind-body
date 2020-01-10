@@ -280,7 +280,8 @@
     },
     "Id": {
       "type": [
-        "integer"
+        "integer",
+        "null"
       ]
     },
     "IsAvailable": {

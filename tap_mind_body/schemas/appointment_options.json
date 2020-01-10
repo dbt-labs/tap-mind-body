@@ -18,7 +18,8 @@
     },
     "Name": {
       "type": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "Value": {
